@@ -1,0 +1,21 @@
+class Solution:
+    def sumOfEncryptedInt(self, nums: List[int]) -> int:
+        ci=[]
+        for i in range(len(nums)):
+            a=nums[i]
+            bi=[]
+            c=a
+            while c>0:
+                bi.append(c%10)
+                c=c//10
+            bi=tuple(bi)
+            d=max(bi)
+            e=0
+            for i in range(len(bi)):
+                e=(e*10)+d
+            ci.append(e)
+        f=0
+        for i in range(len(ci)):
+            f=f+ci[i]
+        return f
+        
